@@ -1,5 +1,7 @@
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 const mockUrls = [
   "https://kbreactappbuck.s3.ap-south-1.amazonaws.com/pic1.png",
   "https://kbreactappbuck.s3.ap-south-1.amazonaws.com/IMG_20190531_163347_176_Original.jpg",
@@ -12,7 +14,6 @@ const mockImages = mockUrls.map((url, index) => ({
 
 export default async function HomePage() {
   const posts = await db.query.posts.findMany();
-
   console.log(posts);
 
   return (
